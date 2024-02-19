@@ -4,14 +4,14 @@ this is a fast way to create ids with data inside them about when they are creat
 # How to use
 ```dart
   // all these parameters are optional
-  String id = DartID().generate(
+  String id = DartID(
     idLength: 20,
     allowCapitalLetters: true,
     allowNumbers: true,
     allowSmallLetters: true,
     allowSymbols: false,
     swapParts: true,
-  );
+  ).generate();
   print(id);
 
   DateTime createdAt = DartID().parseId(id);

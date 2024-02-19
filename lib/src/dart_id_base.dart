@@ -6,7 +6,14 @@ String _numbers = '1234567890';
 String _symbols = '`~!@#\$%^&*()-=_+[]\\{}|;\':",./<>?';
 
 class DartID {
-  String generate({
+  final int idLength = 20;
+  final bool allowSymbols = false;
+  final bool allowNumbers = true;
+  final bool allowCapitalLetters = true;
+  final bool allowSmallLetters = true;
+  final bool swapParts = true;
+
+  const DartID({
     /// this is the length of the id part(the second part)
     int idLength = 20,
     bool allowSymbols = false,
@@ -14,7 +21,9 @@ class DartID {
     bool allowCapitalLetters = true,
     bool allowSmallLetters = true,
     bool swapParts = true,
-  }) {
+  });
+
+  String generate() {
     String letters = '';
     if (allowSymbols) {
       letters += _symbols;
