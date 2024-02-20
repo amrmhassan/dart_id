@@ -6,21 +6,21 @@ String _numbers = '1234567890';
 String _symbols = '`~!@#\$%^&*()-=_+[]\\{}|;\':",./<>?';
 
 class DartID {
-  final int idLength = 20;
-  final bool allowSymbols = false;
-  final bool allowNumbers = true;
-  final bool allowCapitalLetters = true;
-  final bool allowSmallLetters = true;
-  final bool swapParts = true;
+  final int idLength;
+  final bool allowSymbols;
+  final bool allowNumbers;
+  final bool allowCapitalLetters;
+  final bool allowSmallLetters;
+  final bool swapParts;
 
   const DartID({
     /// this is the length of the id part(the second part)
-    int idLength = 20,
-    bool allowSymbols = false,
-    bool allowNumbers = true,
-    bool allowCapitalLetters = true,
-    bool allowSmallLetters = true,
-    bool swapParts = true,
+    this.idLength = 20,
+    this.allowSymbols = false,
+    this.allowNumbers = true,
+    this.allowCapitalLetters = true,
+    this.allowSmallLetters = true,
+    this.swapParts = true,
   });
 
   String generate() {

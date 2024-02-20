@@ -9,4 +9,8 @@
 
 - All arguments moved to the constructor
 
+## 2.0.1
+
+- an error fixed
+
 
