@@ -9,6 +9,7 @@ void main() {
     allowSmallLetters: true,
     allowSymbols: false,
     swapParts: true,
+    allowDateTime: true,
   ).generate();
   print(id);
 

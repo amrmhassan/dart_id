@@ -14,3 +14,8 @@
 - an error fixed
 
 
+## 2.0.2
+
+- now you can only generate a random id without datetime in it
+
+

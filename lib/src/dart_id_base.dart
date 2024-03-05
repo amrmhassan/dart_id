@@ -12,6 +12,7 @@ class DartID {
   final bool allowCapitalLetters;
   final bool allowSmallLetters;
   final bool swapParts;
+  final bool allowDateTime;
 
   const DartID({
     /// this is the length of the id part(the second part)
@@ -21,6 +22,7 @@ class DartID {
     this.allowCapitalLetters = true,
     this.allowSmallLetters = true,
     this.swapParts = true,
+    this.allowDateTime = true,
   });
 
   String generate() {
@@ -42,8 +44,12 @@ class DartID {
     }
     final chars = letters.split('');
     String id = _randomId(chars, idLength);
-    String dateTime = DateTime.now().microsecondsSinceEpoch.toString();
-    return combineId(dateTime, id, swapParts);
+    if (allowDateTime) {
+      String dateTime = DateTime.now().microsecondsSinceEpoch.toString();
+      return combineId(dateTime, id, swapParts);
+    } else {
+      return id;
+    }
   }
 
   String _randomId(List<String> chars, int length) {
